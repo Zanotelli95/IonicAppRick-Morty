@@ -8,8 +8,16 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'userslist',
     pathMatch: 'full'
+  },
+  {
+    path: 'userslist',
+    loadChildren: () => import('./userslist/userslist.module').then( m => m.UserslistPageModule)
+  },
+  {
+    path: 'perfil/:id',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   },
 ];
 
